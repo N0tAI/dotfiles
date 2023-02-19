@@ -1,0 +1,6 @@
+#!/usr/bin/bash
+
+function connect_wifi() {
+	[ -z "$1" ] && echo "Must specify a SSID to use" && return; 
+	nmcli devices wifi connect $1 password $2
+}

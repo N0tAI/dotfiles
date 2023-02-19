@@ -1,0 +1,20 @@
+#!/usr/bin/bash
+
+cal() {
+	cd "$1" && ls -A --color=auto
+}
+cwl() {
+	cd "$1" && pwd -P && ls -A --color=auto
+}
+pwl() {
+	pwd -P && ls -A --color=auto
+}
+mkd() {
+	mkdir -p $1 && cd "$1"
+}
+help() {
+	"$1" -h || "$1" --help
+}
+refresh() {
+	clear && exec $(basename $(readlink "/proc/$$/exe"))
+}

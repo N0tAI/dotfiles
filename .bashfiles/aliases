@@ -1,0 +1,13 @@
+#!/usr/bin/bash
+
+# Automatically enabling colour usage
+alias ls="ls --color=auto"
+alias diff="diff --color=auto"
+alias grep="grep --color=auto"
+alias ip="ip --color=auto"
+
+alias la="ls -A"
+alias lr="ls -R"
+alias ll="ls -Al"
+
+alias h="help"
