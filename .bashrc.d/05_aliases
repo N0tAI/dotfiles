@@ -10,6 +10,17 @@ alias la="ls -A"
 alias lr="ls -R"
 alias ll="ls -Al"
 
+alias -- -=" cd -"
+alias /=" cd /"
+alias ..=" cd .."
+alias ...=" cd ../.."
+alias ....=" cd ../../.."
+alias .....=" cd ../../../.."
+
+alias '~'=" cd ~"
+
 alias h="help"
 alias sudo="sudo "
 alias c="clear && "
+
+alias echo="echo -e"

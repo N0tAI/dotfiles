@@ -5,21 +5,11 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-alias echo="echo -e"
-PS1='[\u@\h \W]\$ '
-
 function get_abs_filename() {
-  echo "$(cd "$(dirname "$1")" && pwd)/$(basename "$1")"
+  echo -e "$(cd "$(dirname "$1")" && pwd)/$(basename "$1")"
 }
 function is_valid_script() {
-	if [ -z "$1" ]; then
-		return 1
-	fi
-	if [ -f "$1" ] && [ -r "$1" ]; then
-		return 0
-	else
-		return 1
-	fi
+	[ -z "$1" ] && [ -f "$1" ] && [ -r "$1" ]
 }
 function loadscript() {
 	if [ -d "$1" ] && [ -r "$1" ] && [ -x "$1" ]; then
@@ -30,7 +20,7 @@ function loadscript() {
 		USERSCRIPTS[${#USERSCRIPTS[@]}]+="$(get_abs_filename "$1")"
 		source "$1"
 	else
-		echo "\e[31mWARNING\e[0m] The path '$1' is not an executable script."	
+		echo -e "\e[31mWARNING\e[0m] The path '$1' is not an executable script."	
 	fi
 }
 
