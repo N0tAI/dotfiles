@@ -11,3 +11,5 @@ alias lr="ls -R"
 alias ll="ls -Al"
 
 alias h="help"
+alias sudo="sudo "
+alias c="clear && "

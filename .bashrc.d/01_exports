@@ -2,4 +2,4 @@
 
 export EDITOR="nvim"
 
-export PROJECTSDIR="$HOME/projects"
+export PROJECTSDIR="/var/projects"

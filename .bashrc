@@ -27,11 +27,12 @@ function loadscript() {
 			loadscript "$file"
 		done
 	elif is_valid_script "$1" ; then
-		export USERSCRIPTS="$USERSCRIPTS:$(get_abs_filename "$1")"
+		USERSCRIPTS[${#USERSCRIPTS[@]}]+="$(get_abs_filename "$1")"
 		source "$1"
 	else
 		echo "\e[31mWARNING\e[0m] The path '$1' is not an executable script."	
 	fi
 }
 
-loadscript "./.bashfiles"
+declare -a USERSCRIPTS
+loadscript "./.bashrc.d"
