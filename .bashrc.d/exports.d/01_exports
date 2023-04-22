@@ -1,0 +1,5 @@
+#!/usr/bin/bash
+
+export EDITOR="nvim"
+
+export PROJECTSDIR="/var/projects"
